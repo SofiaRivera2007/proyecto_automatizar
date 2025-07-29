@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Segmentos centrados sin fondo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px 50px;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      /* fondo transparente */
+      background: transparent;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: white; /* fondo sólo en contenedor */
+      padding: 30px 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #1e40af;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+    }
+
+    .segment {
+      margin-bottom: 2rem;
+    }
+
+    .subsections {
+      display: flex;
+      gap: 20px;
+    }
+
+    .subsection {
+      flex: 1;
+      background: #eff6ff;
+      border-radius: 10px;
+      padding: 15px 20px;
+      transition: background-color 0.3s;
+      cursor: default;
+    }
+
+    .subsection:hover {
+      background-color: #dbeafe;
+    }
+
+    .subsection h3 {
+      margin-top: 0;
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .subsection p {
+      color: #334155;
+      line-height: 1.5;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="segment">
+      <h2>Segmento 1: Fundamentos</h2>
+      <div class="subsections">
+        <div class="subsection">
+          <h3>Introducción</h3>
+          <p>Descripción breve de la introducción y conceptos básicos.</p>
+        </div>
+        <div class="subsection">
+          <h3>Aplicaciones</h3>
+          <p>Cómo se aplican estos fundamentos en la práctica.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="segment">
+      <h2>Segmento 2: Desarrollo</h2>
+      <div class="subsections">
+        <div class="subsection">
+          <h3>Tecnologías</h3>
+          <p>Herramientas y plataformas principales.</p>
+        </div>
+        <div class="subsection">
+          <h3>Análisis</h3>
+          <p>Estudio comparativo y resultados.</p>
+        </div>
+        <div class="subsection">
+          <h3>Conclusiones</h3>
+          <p>Resumen final y aprendizajes importantes.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

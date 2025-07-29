@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acordeón Anidado</title>
+    <style>
+        body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f3f4f6;
+        padding: 2rem;
+        }
+        details {
+        background: #fff;
+        border-radius: 10px;
+        margin: 1rem 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        padding: 1rem;
+        }
+        summary {
+        font-weight: bold;
+        cursor: pointer;
+        }
+        details details {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background: #f9fafb;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Secciones con Acordeón Anidado</h2>
+
+<details>
+  <summary>🧩 Segmento 1: Fundamentos</summary>
+  <details>
+    <summary>📘 Tema 1.1: Introducción</summary>
+    <p>Información sobre la introducción al tema.</p>
+  </details>
+  <details>
+    <summary>🧪 Tema 1.2: Aplicaciones</summary>
+    <p>Detalles sobre las aplicaciones básicas del tema.</p>
+  </details>
+</details>
+
+<details>
+  <summary>🌐 Segmento 2: Desarrollo</summary>
+  <details>
+    <summary>⚙️ Tema 2.1: Tecnologías</summary>
+    <p>Contenido sobre tecnologías actuales.</p>
+  </details>
+  <details>
+    <summary>🔍 Tema 2.2: Análisis</summary>
+    <p>Datos y comparaciones técnicas.</p>
+  </details>
+  <details>
+    <summary>📈 Tema 2.3: Conclusiones</summary>
+    <p>Resumen y resultados obtenidos.</p>
+  </details>
+</details>
+
+</body>
+</html>

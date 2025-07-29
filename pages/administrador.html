@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+  <link rel="icon" href="/static/imagenes/icon.webp">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="/static/css/animate.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/static/css/magnific-popup.css">
+
+  <link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="/static/css/jquery.timepicker.css">
+
+  
+  <link rel="stylesheet" href="/static/css/flaticon.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+   <div class="container">
+     <a class="navbar-brand" onclick="inicio()"><span>AdmiCR</span></a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="oi oi-menu"></span> Menu
+     </button>
+
+     <div class="collapse navbar-collapse" id="ftco-nav">
+      	<ul class="navbar-nav">
+      		<li class="nav-item">
+      		<a class="nav-link" style="color: #4986fc; cursor: default;" href="#" id="enlace-hola">Bienvenido Administrador</a>
+      		</li>
+        </ul>
+       <ul class="navbar-nav ml-auto">
+         <li class="nav-item"><a onclick="irtemas()" class="nav-link">Temas</a></li>
+         <li class="nav-item"><a onclick="inicio()" class="nav-link">Bolet&iacuten</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Perfil
+            </a>
+            <ul class="dropdown-menu prueba" style="color: #3c73e5;">
+              <li><a style="color: #a955e7;" onclick="cerrar_sesion()" class="dropdown-item" href="#">Cerrar sesión</a></li>
+            </ul>
+          </li>
+
+
+       </ul>
+     </div>
+   </div>
+ </nav>
+ <!-- END nav -->
+ 
+ <section class="hero-wrap hero-wrap-2" style="background-image: url('/static/imagenes/admi2.jpg');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+       <p class="breadcrumbs"><span class="mr-2"></span> <span>Administrador <i class="fa fa-chevron-right"></i></span></p>
+       <h1 class="mb-0 bread">Peticiones de recursos</h1>
+     </div>
+   </div>
+ </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="modalAñadirTema" tabindex="-1" aria-labelledby="titulomodalAñadirTema" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="titulomodalAñadirTema">Cambiar contraseña</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      
+      <div class="modal-body">
+        <form id="formCambiarContrasena">
+          <div class="mb-3">
+            <label for="contrasenaActual" class="form-label">Contraseña actual</label>
+            <input type="password" class="form-control" id="contrasenaActual" placeholder="Ingrese su contraseña actual" required>
+          </div>
+          <div class="mb-3">
+            <label for="nuevaContrasena" class="form-label">Nueva contraseña</label>
+            <input type="password" class="form-control" id="nuevaContrasena" placeholder="Ingrese la nueva contraseña" required>
+          </div>
+          <div class="mb-3">
+            <label for="confirmarContrasena" class="form-label">Confirmar nueva contraseña</label>
+            <input type="password" class="form-control" id="confirmarContrasena" placeholder="Confirme la nueva contraseña" required>
+          </div>
+        </form>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" style="background-color: #a955e7 !important;" data-bs-dismiss="modal">Cancelar</button>
+        <a  class="btn btn-primary">Guardar cambios</a>
+      </div>      
+    </div>
+  </div>
+</div>
+
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div id="textoPuestos"></div>
+        <div class="heading-section ftco-animate d-flex align-items-center">
+            <!--<div style="text-align: center; padding-bottom: 50px;" class="w-100 mb-4 mb-md-0">
+                <span class="subheading">Variedad de temas</span>
+                <h2  class="mb-4">Peticiones de recursos</h2>
+                <p></p>
+            </div>-->
+        </div>
+        <div class="row d-flex" id="en_progreso">
+        </div>
+    </div>
+</section>
+
+<footer class="ftco-footer ftco-no-pt">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md pt-5">
+        <div class="ftco-footer-widget ">
+          <h2 class="">Vis&iacutetanos</h2>
+          <p>Prepárate con intención, estudia con estrategia, ingresa con confianza. Convertimos el estudio en una meta alcanzable.</p>
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+            <li class="ftco-animate"><a href="https://www.facebook.com/cedespaginaoficial/?locale=es_LA"><span class="fa fa-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.instagram.com/cedesdonbosco/?hl=es"><span class="fa fa-instagram"></span></a></li>
+        </ul>
+    </div>
+</div>
+
+</div>
+<div class="row">
+  <div class="col-md-12 text-center">
+
+    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados. Plataforma creada por Sofia Rivera Vanegas 12C</a>
+      </p>
+  </div>
+</div>
+</div>
+</footer>
+
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+<script src="https://kit.fontawesome.com/f3fcf15290.js" crossorigin="anonymous"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jquery.easing.1.3.js"></script>
+<script src="/static/js/jquery.waypoints.min.js"></script>
+<script src="/static/js/jquery.stellar.min.js"></script>
+<script src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/jquery.magnific-popup.min.js"></script>
+<script src="/static/js/jquery.animateNumber.min.js"></script>
+<script src="/static/js/bootstrap-datepicker.js"></script>
+<script src="/static/js/scrollax.min.js"></script>
+<script src="/static/js/main.js"></script>
+
+<script>
+
+    var token = localStorage.getItem('accesstoken');
+    var request = new XMLHttpRequest();
+    var requestURL = "/recursos_en_progreso";
+    request.open("GET", requestURL);
+    request.responseType = "json";
+    request.send();
+
+    var request2 = new XMLHttpRequest();
+    var requestURL2 = "";
+
+    var request3 = new XMLHttpRequest();
+    var requestURL3 = "";
+
+    request.onload = function () {
+      if(request.response != 0){
+        var fecha;
+        var recursos = request.response;
+        var campos = document.getElementById('en_progreso');  
+        recursos.forEach(element => {
+
+        var estadoTexto = "";
+        
+        fecha = new Date(element.fecha);
+        var newDiv = document.createElement("div");
+        newDiv.id = 'recurso-' + element.id;
+        newDiv.className = 'col-lg-4 ';
+            newDiv.innerHTML =   '<div class="blog-entry capitalize-first">'+
+                                  '<!--<a href="blog-single.html" class="block-20" style="background-image: url();">'+
+                                  '</a>-->'+
+                                  '<div class="text d-block">'+
+                                  '<div class="meta">'+
+                                    '<p>'+
+                                     '<a href="#"><span class="fa fa-calendar mr-2"></span>'+fecha.toDateString()+'  '+'</a>'+
+                                     '<a href="#"><span style="margin-left: 20px;" class="fa fa-user mr-2"></span>'+element.nombre+' '+element.apellido1+'</a>'+
+                                   '</p>'+
+                                 '</div>'+
+                                 '<h3 class="heading"><a href="#">'+element.titulo+'</a></h3>'+
+                                 '<p>'+element.descripcion+'</p>'+
+                                  '<p>Tema: '+element.titulo_tema+'</p>'+
+                                '<a style="margin-bottom: 20px;" class="block-20-2"  href="'+element.url+'">¡Enlace aqu&iacute!</a>'+
+                                '<a style="margin-right: 7px;" onclick="publicar('+ element.id_recurso+')" class="btn btn-primary " ><span class="fa fa-send "></span></a>'+
+                                '<a style="background: #dc3545 !important; border: 1px solid  #dc3545 !important;" onclick="eliminar('+ element.id_recurso+')" class="btn btn-primary " ><span class="fa fa-trash "></span></a>'+
+                               '</div>'+
+                             '</div>';
+        campos.appendChild(newDiv);                   
+        });
+      }
+      else{
+          var textoPuesto = document.getElementById('textoPuestos')
+          var text2 = document.createElement("div");
+          text2.innerHTML = '<div class="col-lg-12"><div style="text-align: center !important;">'+
+                              '<i style="font-size: 40px; margin-bottom: 20px; color:#4986fc" class="fa-solid fa-circle-exclamation"></i>'+
+                              '<p>Por el momento no hay ninguna petici&oacuten de recurso. </p></div></div>';
+          textoPuesto.appendChild(text2);          
+
+      }
+  };
+
+function publicar(id_recurso){
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Se publicará el recurso",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Publicar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        var requestURL2 = "/publicar_admin";
+        var strData = "id_recurso=" + id_recurso;
+
+        request2.open("POST", requestURL2);
+        request2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request2.responseType = "json";
+        request2.send(strData);
+      }
+    });
+  }
+
+  function eliminar(id_recurso){
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Se eliminará el recurso",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#dc3545",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Eliminar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        alert(id_recurso);
+        var requestURL3 = "/eliminar_admin";
+        var strData = "id_recurso=" + id_recurso;
+
+        request3.open("DELETE", requestURL3);
+        request3.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request3.responseType = "json";
+        request3.send(strData);
+      }
+    });
+
+  };
+
+  request2.onload = function () {
+  if (request2.status === 200) {
+      Swal.fire({
+        title: "Se ha publicado",
+        icon: "success"
+      }).then(() => {
+        location.reload();
+      });
+    } else {
+      Swal.fire({
+        title: "Error al actualizar",
+        text: "Algo salió mal",
+        icon: "error"
+      });
+    }
+  };
+
+    request3.onload = function () {
+  if (request3.status === 201) {
+      Swal.fire({
+        title: "Se ha eliminado",
+        icon: "success"
+      }).then(() => {
+        location.reload();
+      });
+    } else {
+      Swal.fire({
+        title: "Error al eliminar",
+        text: "Algo salió mal",
+        icon: "error"
+      });
+    }
+  };
+
+  function cerrar_sesion(){
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¿Deseas cerrar la sesión?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: 'green',
+            cancelButtonColor: 'red',
+            confirmButtonText: 'Sí, cerrar sesión',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.removeItem('accesstoken');
+                localStorage.removeItem('id');
+                localStorage.removeItem('nombre');
+                localStorage.removeItem('apellido1');
+                window.location.href = '/';
+            }
+        });
+    }
+
+
+
+    function irtemas(){
+      window.location.href = '/ver_temas?accesstoken='+token;
+    };
+    function inicio(){
+      window.location.href = "/administrador?accesstoken="+token;
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

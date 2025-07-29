@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	    <!--Enlace FONTAWESOME--><script src="https://kit.fontawesome.com/f3fcf15290.js" crossorigin="anonymous"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  	<link rel="icon" href="/static/imagenes/icon.webp">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="/static/css/animate.css">
+	
+	<link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/static/css/magnific-popup.css">
+
+	<link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/static/css/jquery.timepicker.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	
+	<link rel="stylesheet" href="/static/css/flaticon.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="body">
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" onclick="inicio()"><span>Admi</span>CR</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav">
+          			<li class="nav-item">
+            		<a class="nav-link" style="color: #4986fc; cursor: default;" href="#" id="enlace-hola">Bienvenido Administrador</a>
+          			</li>
+        		</ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a onclick="inicio()" class="nav-link" style="cursor:pointer;">Volver</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
+	
+	
+	<section class="ftco-section">
+		<div class="container heading-section">
+  <div class="mb-5">
+    <h2 class="mb-4">Agrega un tema</h2>
+    <form id="tema">
+      <div class="row g-3 align-items-center">
+        <!-- Campo Email -->
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Nombre">
+        </div>
+        <!-- Campo Contraseña -->
+        <div class="col-md-4">
+          <input type="text" class="form-control" placeholder="Descripción" name="descripcion" id="descripcion">
+        </div>
+        <!-- Botón -->
+        <div class="d-flex ">
+    	<a class="btn btn-primary" onClick="subir()"><i class="fa-solid fa-paper-plane"></i></a>
+        </div>
+      </div>
+    </form>
+  </div>
+    
+</div>
+	</section>
+
+    <section style="background-color: white !important; margin-top: 0px !important;" class="ftco-section testimony-section bg-light">
+   <div class="overlay" style="background-image: url(/static/imagenes/admi4.jpg);"></div>
+   <div class="container">
+    <div class="row pb-4">
+      <div class="col-md-7 heading-section ftco-animate">
+         <span class="subheading">Administra</span>
+         <h2 class="mb-4">Temas subidos por ti</h2>
+     </div>
+    </div>
+  </div>
+  <div class="container ">
+    <div class="row ftco-animate">
+      <div class="col-md-12" id="espacio_temas" style="max-height: 600px; overflow-y: auto;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+		
+
+		<!-- loader -->
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+		<script>
+             var token = localStorage.getItem('accesstoken');
+
+             var requestURL = "/temas";
+             var request = new XMLHttpRequest();
+             request.open("GET", requestURL);
+             request.responseType = "json";
+             request.send();
+
+
+            request.onload = function () {
+            var temas = request.response;
+            var campos = document.getElementById('espacio_temas');
+
+            temas.forEach(element => {
+                var estadoTexto = "";
+                var newDiv = document.createElement("div");
+                newDiv.id = 'recurso-' + element.id;
+                newDiv.className = 'tema';
+                newDiv.innerHTML =  '<div class="testimony-wrap py-4">'+
+                                      '<div class="text">'+
+                                        '<!--<p class="star">'+
+                                          '<span class="fa fa-star"></span>'+
+                                          '<span class="fa fa-star"></span>'+
+                                          '<span class="fa fa-star"></span>'+
+                                          '<span class="fa fa-star"></span>'+
+                                          '<span class="fa fa-star"></span>'+
+                                        '</p>-->'+
+                                        '<p class="mb-4">'+element.descripcion_tema+'</p>'+
+                                        
+                                        '<div class="d-flex justify-content-between align-items-center">'+
+                                          '<div class="pl-3">'+
+                                            '<span class="position">'+element.titulo_tema+'</span>'+
+                                          '</div>'+
+                                          '<div>'+
+                                          '</div>'+
+                                        '</div>'+
+                                        
+                                      '</div>'+
+                                    '</div>';
+                campos.appendChild(newDiv);                   
+            });
+        };
+
+
+			var requestURL2 = "";
+        	var request2 = new XMLHttpRequest();
+			
+
+        	request2.onload = function () {
+        	        if(request2.status == 400){ 
+        	            Swal.fire({
+  							position: "top-end",
+  							icon: "error",
+  							title: "No se pudo publicar",
+  							showConfirmButton: false,
+  							timer: 1500
+						});
+        	            return;
+        	        }
+        	        else
+        	        if(request2.status == 201){
+						Swal.fire({
+  							position: "top-end",
+  							icon: "success",
+  							title: "Tema publicado",
+  							showConfirmButton: false,
+  							timer: 1500
+						});
+					}
+					
+        	};
+
+        	function subir(){	
+				const titulo = document.getElementById("titulo").value.trim();
+  				const descripcion = document.getElementById("descripcion").value.trim();
+
+  				if (!titulo || !descripcion) {
+        	        Swal.fire({
+  						position: "top-end",
+  						icon: "error",
+  						title: "Debe llenar todos los campos",
+  						showConfirmButton: false,
+  						timer: 1500
+					});
+        	        return;
+  				}
+				
+        	    var requestURL2 = "/publicar_tema";
+        	    var formData = document.forms['tema'];                
+        	    var strData = "titulo_tema=" + formData.elements['titulo'].value + 
+        	        "&descripcion_tema=" + formData.elements['descripcion'].value;
+        	    request2.open("POST", requestURL2);
+        	    request2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        	    request2.responseType = "json";
+        	    request2.send(strData);
+          	    formData.reset();
+
+        	}
+
+			function inicio(){
+                window.location.href = "/administrador?accesstoken="+token;
+			}
+
+		</script>
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="/static/js/popper.min.js"></script>
+		<script src="/static/js/bootstrap.min.js"></script>
+		<script src="/static/js/jquery.easing.1.3.js"></script>
+		<script src="/static/js/jquery.waypoints.min.js"></script>
+		<script src="/static/js/jquery.stellar.min.js"></script>
+		<script src="/static/js/owl.carousel.min.js"></script>
+		<script src="/static/js/jquery.magnific-popup.min.js"></script>
+		<script src="/static/js/jquery.animateNumber.min.js"></script>
+		<script src="/static/js/bootstrap-datepicker.js"></script>
+		<script src="/static/js/scrollax.min.js"></script>
+		<script src="/static/js/main.js"></script>
+		
+	</body>
+	</html>

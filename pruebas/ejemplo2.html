@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tarjetas Segmentadas</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9fafb;
+      padding: 2rem;
+    }
+
+    .segmento {
+      margin-bottom: 2rem;
+    }
+
+    .segmento h2 {
+      color: #2563eb;
+      border-bottom: 2px solid #d1d5db;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 1.2rem;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #1f2937;
+    }
+  </style>
+</head>
+<body>
+
+<div class="segmento">
+  <h2>Segmento 1: Fundamentos</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>📘 Introducción</h3>
+      <p>Contenido introductorio con definiciones clave.</p>
+    </div>
+    <div class="card">
+      <h3>🧪 Aplicaciones</h3>
+      <p>Uso práctico del tema fundamental en distintos campos.</p>
+    </div>
+  </div>
+</div>
+
+<div class="segmento">
+  <h2>Segmento 2: Desarrollo</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>⚙️ Tecnologías</h3>
+      <p>Herramientas y plataformas utilizadas.</p>
+    </div>
+    <div class="card">
+      <h3>🔍 Análisis</h3>
+      <p>Comparación entre métodos existentes y su rendimiento.</p>
+    </div>
+    <div class="card">
+      <h3>📈 Conclusiones</h3>
+      <p>Resultados y aprendizajes extraídos.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

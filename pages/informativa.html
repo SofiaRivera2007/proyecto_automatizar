@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="icon" href="/static/imagenes/icon.webp">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="/static/css/animate.css">
+	
+	<link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/static/css/magnific-popup.css">
+
+	<link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/static/css/jquery.timepicker.css">
+
+	
+	<link rel="stylesheet" href="/static/css/flaticon.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+
+	  <style>
+
+/* Pestañas */
+.tab-wrapper {
+  margin: 0 auto;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+}
+
+.tab-content-text{
+	margin-top: 55px;
+	margin-bottom: 60px;
+}
+
+.tab-btn {
+  background-color: #e5e7eb;
+  color: #374151;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #d1d5db;
+}
+
+.tab-btn.active {
+  background-color: #9ca3af;
+  color: #fff;
+}
+
+/* Paneles de contenido */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Contenido de subsecciones */
+.tab-panel h2 {
+  margin-bottom: 1rem;
+	font-size: 34px;
+    font-weight: 600;
+    line-height: 1.4;  border-left: 5px solid #a955e7;
+  padding-left: 10px;
+}
+
+.subsection {
+  background-color: #ebf2ff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 10px rgb(0 36 121 / 5%);
+}
+
+.subsection h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.subsection p {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.sabias-box {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fffbea;
+  border-left: 6px solid #facc15;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 20px auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
+  color: #4b5563;
+}
+
+.sabias-box .icon {
+  font-size: 1.8rem;
+  margin-right: 15px;
+  color: #fbbf24;
+}
+
+.sabias-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" style="font-size:20px !important" onclick="inicio()"><span></span>AdmiCR</a>
+
+    <!-- Botón hamburguesa -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Contenedor del menú -->
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <div class="d-flex w-100 justify-content-between align-items-center">
+        <!-- Hola alineado a la izquierda -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" style="color: #4986fc; cursor: default;" href="#" id="enlace-hola"></a>
+          </li>
+        </ul>
+
+        <!-- Menú alineado a la derecha -->
+        <ul class="navbar-nav">
+          <li class="nav-item active"><a onclick="inicio()" class="nav-link">Inicio</a></li>
+          <li class="nav-item"><a onclick="irRecursos()" class="nav-link">Recursos</a></li>
+          <li class="nav-item"><a onclick="favoritos()" class="nav-link">Favoritos</a></li>
+          <li class="nav-item"><a onclick="mis_recursos()" class="nav-link">Publicar</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+	<!-- END nav -->
+	
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/imagenes/mate2.jpg');">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<p class="breadcrumbs"><span class="mr-2"><a onclick="inicio()">Inicio <i class="fa fa-chevron-right"></i></a></span> <span>Materia <i class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-0 bread">Materia</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+<section class="info-section ftco-section">
+  <div class="container">
+    
+<div class="tab-wrapper">
+  <!-- Botones de pestañas -->
+  <div class="tab-buttons">
+    <button class="tab-btn active btn-primary" data-tab="segment1">Razonamiento verbal</button>
+    <button class="tab-btn btn-primary" data-tab="segment2">Razonamiento matem&aacutetico</button>
+  </div>
+
+  <!-- Contenido de cada pestaña -->
+  <div class="tab-content">
+    
+    <!-- Segmento 1 -->
+    <div class="tab-panel active" id="segment1">
+      <h2>Razonamiento verbal</h2>
+	  <p>Mide la capacidad para comprender, analizar y manejar el lenguaje de forma lógica y crítica. No se trata solo de memorizar definiciones o vocabulario, sino de evaluar habilidades intelectuales relacionadas con el uso del lenguaje. Este se divide en dos categor&iacuteas:</p>
+	  <div class="tab-content-text">
+      	<div class="subsection">
+      	  <h3>Sem&aacutentico</h3>
+      	  <p>Este implica determinar las relaciones entre distintas partes de una oraci&oacuten y reconocer el significado de las palabras en contexto.</p>
+      	</div>
+      	<div class="subsection">
+      	  <h3>Inferencial</h3>
+      	  <p>En este se requiere realizar comparaciones de ideas entre distintos textos, sintetizar informaci&oacuten, extraer conclusiones y comprender insturcciones.</p>
+      	</div>
+		</div>
+		<div class="sabias-box">
+		  <span class="icon">💡</span>
+		  <div class="sabias-text">
+		    <strong>¿Sabías que…?</strong>  
+		    El razonamiento verbal predice la habilidad de un estudiante para desenvolverse académicamente, especialmente en tareas que requieren comprensión de textos, argumentación, escritura y pensamiento crítico.
+		  </div>
+		</div>
+    </div>
+
+    <!-- Segmento 2 -->
+    <div class="tab-panel" id="segment2">
+      <h2>Razonamiento matem&aacutetico</h2>
+	  <p>Mide la capacidad para analizar y resolver problemas numéricos y cuantitativos usando el pensamiento lógico y matemático, más allá de memorizar fórmulas o procedimientos. Se divide en tres categor&iacuteas:</p>
+	  <div class="tab-content-text">
+      <div class="subsection">
+        <h3>Resoluci&oacuten de problemas</h3>
+        <p>Este implica el uso de conocimientos b&aacutesicos, definir y ejecutar una estrategia de soluci&oacuten, aplicar reglas b&aacutesicos de conteo y definiciones o teoremas en la resoluci&oacuten de problemas.</p>
+      </div>
+      <div class="subsection">
+        <h3>Razonamiento deductivo e inductivo</h3>
+        <p>Este realizar inferencias o deducciones a partir de cierta informaci&oacuten dada, identificar premisas para llegar a una conclusi&oacuten y crear nuevos conceptos analizando semejanzas o diferencias para luego aplicarlos.</p>
+      </div>
+      <div class="subsection">
+        <h3>Razonamiento con figuras</h3>
+        <p>Este se enfoca en identificar patrones geom&eacutetricos, analizar secuencias de figuras y reconocer las partes de un todo.</p>
+      </div>
+	 </div>
+	 <div class="sabias-box">
+	  <span class="icon">💡</span>
+	  <div class="sabias-text">
+	    <strong>¿Sabías que…?</strong>  
+	     El razonamiento matem&aacutetico refleja tu capacidad de resolver problemas nuevos, analizar información y tomar decisiones basadas en datos — habilidades claves en la universidad y en la vida diaria.
+	  </div>
+</div>
+
+    </div>
+
+  </div>
+</div>
+  </div>
+</section>
+
+<footer class="ftco-footer ftco-no-pt">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md pt-5">
+        <div class="ftco-footer-widget ">
+          <h2 class="">Vis&iacutetanos</h2>
+          <p>Prepárate con intención, estudia con estrategia, ingresa con confianza. Convertimos el estudio en una meta alcanzable.</p>
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+            <li class="ftco-animate"><a href="https://www.facebook.com/cedespaginaoficial/?locale=es_LA"><span class="fa fa-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.instagram.com/cedesdonbosco/?hl=es"><span class="fa fa-instagram"></span></a></li>
+        </ul>
+    </div>
+</div>
+
+</div>
+<div class="row">
+  <div class="col-md-12 text-center">
+
+    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados. Plataforma creada por Sofia Rivera Vanegas 12C</a>
+      </p>
+  </div>
+</div>
+</div>
+</footer>
+		
+
+		<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var nombre = localStorage.getItem('nombre');
+      var apellido1 = localStorage.getItem('apellido1');
+
+      const enlace = document.getElementById("enlace-hola");
+      enlace.textContent = "Bienvenido, " + nombre + " " + apellido1;
+    });
+
+  var token = localStorage.getItem('accesstoken');
+
+  document.querySelectorAll('.tab-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const tab = button.dataset.tab;
+
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+
+      button.classList.add('active');
+      document.getElementById(tab).classList.add('active');
+    });
+  });
+
+
+
+
+  function inicio(){
+	window.location.href = 'principal?accesstoken='+token;
+  }
+  function mis_recursos(){
+	window.location.href = 'mis_recursos?accesstoken='+token;
+  }
+    function irRecursos(){
+	window.location.href = 'recursos?accesstoken='+token;
+  }
+  function favoritos(){
+    window.location.href = '/favoritos?accesstoken='+token;
+  }
+
+
+
+</script>
+    <script src="https://kit.fontawesome.com/f3fcf15290.js" crossorigin="anonymous"></script>
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="/static/js/popper.min.js"></script>
+		<script src="/static/js/bootstrap.min.js"></script>
+		<script src="/static/js/jquery.easing.1.3.js"></script>
+		<script src="/static/js/jquery.waypoints.min.js"></script>
+		<script src="/static/js/jquery.stellar.min.js"></script>
+		<script src="/static/js/owl.carousel.min.js"></script>
+		<script src="/static/js/jquery.magnific-popup.min.js"></script>
+		<script src="/static/js/jquery.animateNumber.min.js"></script>
+		<script src="/static/js/bootstrap-datepicker.js"></script>
+		<script src="/static/js/scrollax.min.js"></script>
+		<script src="/static/js/main.js"></script>
+		
+	</body>
+	</html>

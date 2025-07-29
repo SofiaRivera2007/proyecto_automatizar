@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="icon" href="/static/imagenes/icon.webp">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="/static/css/animate.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	
+	<link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/static/css/magnific-popup.css">
+
+	<link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/static/css/jquery.timepicker.css">
+
+	
+	<link rel="stylesheet" href="/static/css/flaticon.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" style="font-size:20px !important" onclick="inicio()"><span></span>AdmiCR</a>
+
+    <!-- Botón hamburguesa -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Contenedor del menú -->
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <div class="d-flex w-100 justify-content-between align-items-center">
+        <!-- Hola alineado a la izquierda -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" style="color: #4986fc; cursor: default;" href="#" id="enlace-hola"></a>
+          </li>
+        </ul>
+
+        <!-- Menú alineado a la derecha -->
+        <ul class="navbar-nav">
+          <li class="nav-item active"><a onclick="inicio()" class="nav-link">Inicio</a></li>
+          <li class="nav-item"><a onclick="informativa()" class="nav-link">Material</a></li>
+          <li class="nav-item"><a onclick="mis_recursos()" class="nav-link">Mis recursos</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+	<!-- END nav -->
+	
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/imagenes/estudiar.jpg');">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<p class="breadcrumbs"><span class="mr-2"><a onclick="inicio()">Inicio <i class="fa fa-chevron-right"></i></a></span> <span>Recursos <i class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-0 bread">Todos los recursos</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 sidebar">
+
+					<div class="sidebar-box bg-white ftco-animate">
+						<form action="#" class="search-form">
+							<div class="form-group">
+								<span class="icon fa fa-search"></span>
+								<input type="text" class="form-control" placeholder="Search...">
+							</div>
+						</form>
+					</div>
+
+					<div class="sidebar-box bg-white p-4 ftco-animate">
+						<h3 class="heading-sidebar">Course Category</h3>
+						<form action="#" class="browse-form" id="temas">
+
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-9">
+
+					<div class="row" id="aceptados_recursos">
+
+						
+						
+
+					</div>
+					<!--<div class="row mt-5">
+						<div class="col">
+							<div class="block-27">
+								<ul>
+									<li><a href="#">&lt;</a></li>
+									<li class="active"><span>1</span></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>
+									<li><a href="#">&gt;</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>-->
+
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<footer class="ftco-footer">
+	  <div class="container">
+	    <div class="row mb-5">
+	      <div class="col-md pt-5">
+	        <div class="ftco-footer-widget ">
+	          <h2 class="">About</h2>
+	          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+	          <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+	            <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+	            <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+	            <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+	        </ul>
+	    	</div>
+		</div>
+	</div>
+	<div class="row">
+	  <div class="col-md-12 text-center">
+	
+	    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made by Sofia Rivera Vanegas</a>
+	      </p>
+	  </div>
+	</div>
+	</div>
+	</footer>
+	
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+      var nombre = localStorage.getItem('nombre');
+      var apellido1 = localStorage.getItem('apellido1');
+
+      const enlace = document.getElementById("enlace-hola");
+      enlace.textContent = "Bienvenido, " + nombre + " " + apellido1;
+    });
+      var correo = localStorage.getItem('id');
+
+    var token = localStorage.getItem('accesstoken');
+
+	  var request = new XMLHttpRequest();
+	  var requestURL = "/traer_favoritos?correo="+correo;
+	  request.open("GET", requestURL);
+	  request.responseType = "json";
+	  request.send();
+
+    request.onload = function () {
+    var fecha;
+    var recursos = request.response;
+    var campos = document.getElementById('aceptados_recursos');  
+    recursos.forEach(element => {
+        
+    fecha = new Date(element.fecha);
+    var newDiv = document.createElement("div");
+    newDiv.id = 'recurso-' + element.id;
+    newDiv.className = 'col-md-6 d-flex align-items-stretch ';
+    newDiv.innerHTML =  '<div class="project-wrap">'+
+								'<p href="#" class="text p-4 des" >'+
+									'<span class="price">'+element.titulo_tema+'</span>'+
+								'</p>'+
+								'<div class="text p-4">'+
+									'<h3><a href="#">'+element.titulo+'</a></h3>'+
+									'<p>'+element.descripcion+'</p>'+
+									
+									'<p class="advisor"><span class="fa fa-calendar mr-2"></span>'+fecha.toDateString()+'  '+'</p>'+
+									'<p class="advisor"><span class="fa fa-user mr-2"></span>'+element.nombre+' '+element.apellido1+'</p>'+
+									
+									'<ul class="d-flex justify-content-between">'+
+										'<li class="price"><a href="'+element.url+'" >Visitar sitio</a></li>'+
+										'<li class=""><a onclick="favoritos_opciones('+element.id_recurso+','+element.favorito+')"><span class="favorito fa fa-star"></span></a></li>'+
+									'</ul>'+
+								'</div>'+
+							'</div>';
+
+
+    campos.appendChild(newDiv);                   
+    });
+  };
+
+  	var request2 = new XMLHttpRequest();
+	  var requestURL2 = "/recursos_aceptados?correo="+correo;
+	  request2.open("GET", requestURL2);
+	  request2.responseType = "json";
+	  request2.send();
+
+    request2.onload = function () {
+    var fecha;
+    var recursos = request2.response;
+    var campos = document.getElementById('aceptados_recursos');  
+    recursos.forEach(element => {
+        
+    fecha = new Date(element.fecha);
+    var newDiv = document.createElement("div");
+    newDiv.id = 'recurso-' + element.id;
+    newDiv.className = 'col-md-6 d-flex align-items-stretch ';
+    newDiv.innerHTML =  '<div class="project-wrap">'+
+								'<p href="#" class="text p-4 des" >'+
+									'<span class="price">'+element.titulo_tema+'</span>'+
+								'</p>'+
+								'<div class="text p-4">'+
+									'<h3><a href="#">'+element.titulo+'</a></h3>'+
+									'<p>'+element.descripcion+'</p>'+
+									
+									'<p class="advisor"><span class="fa fa-calendar mr-2"></span>'+fecha.toDateString()+'  '+'</p>'+
+									'<p class="advisor"><span class="fa fa-user mr-2"></span>'+element.nombre+' '+element.apellido1+'</p>'+
+									
+									'<ul class="d-flex justify-content-between">'+
+										'<li class="price"><a href="'+element.url+'" >Visitar sitio</a></li>'+
+										'<li class=""><a onclick="guardar_favorito('+element.id_recurso+',)"><span class="color fa fa-star"></span></a></li>'+
+									'</ul>'+
+								'</div>'+
+							'</div>';
+
+
+    campos.appendChild(newDiv);                   
+    });
+  };
+  	var request3 = new XMLHttpRequest();
+	  var requestURL3 = "";
+
+
+  function guardar_favorito(id_recurso){
+    var strData = 'id_usuario='+correo+
+                  '&id_recurso=' + id_recurso;
+		var requestURL3 = "/guardar_favorito";
+		request3.open("POST", requestURL3);
+        request3.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request3.responseType = "json";
+        request3.send(strData);
+  }
+  
+  request3.onload = function () {
+    if (request3.status === 200) {
+      Swal.fire({
+        title: "Contraseña actualizada correctamente",
+        icon: "success"
+      });
+    } else {
+      Swal.fire({
+        title: "Error al actualizar",
+        text: request.response?.mensaje || "Algo salió mal",
+        icon: "error"
+      });
+    }
+  };
+
+
+	function inicio(){
+		window.location.href = '/principal?accesstoken='+token;
+	}
+	function informativa(){
+		window.location.href = '/informativa?accesstoken='+token;
+	}
+	function mis_recursos(){
+		window.location.href = '/mis_recursos?accesstoken='+token;
+	}	
+
+
+
+
+
+</script>
+<script src="https://kit.fontawesome.com/f3fcf15290.js" crossorigin="anonymous"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jquery.easing.1.3.js"></script>
+<script src="/static/js/jquery.waypoints.min.js"></script>
+<script src="/static/js/jquery.stellar.min.js"></script>
+<script src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/jquery.magnific-popup.min.js"></script>
+<script src="/static/js/jquery.animateNumber.min.js"></script>
+<script src="/static/js/bootstrap-datepicker.js"></script>
+<script src="/static/js/scrollax.min.js"></script>
+<script src="/static/js/main.js"></script>
+			
+</body>
+</html>
